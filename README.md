@@ -1,8 +1,8 @@
-  Project Proposal: Express Pro Kit 🚀
+## Project Proposal: Express Pro Kit 🚀
 
 A CLI-driven, shadcn/ui-inspired toolkit for building structured, scalable, and maintainable applications with Express.js.
 
-The Problem: The Express.js Paradox
+## The Problem: The Express.js Paradox
 
 Express.js is the de facto standard for building Node.js applications. Its minimalist, unopinionated nature provides unparalleled freedom and flexibility. However, this freedom comes at a cost, creating a significant "Day One" problem for developers and teams:
 
@@ -14,7 +14,7 @@ Repetitive Boilerplate for Common Features: Implementing standard features like 
 
 Frameworks like Nest.js solve this by being highly opinionated, but they introduce a steep learning curve and a layer of abstraction that many developers who love the simplicity of Express wish to avoid.
 
-The Solution: Express Pro Kit
+## The Solution: Express Pro Kit
 
 Express Pro Kit is an open-source initiative to bridge the gap between the minimalism of Express.js and the productivity of a full-fledged framework. It's not another framework that hides Express behind abstractions. Instead, it's a developer tool that enhances the native Express experience.
 
@@ -26,7 +26,7 @@ A Curated Set of "Recipes": A collection of well-architected, standalone modules
 
 With Express Pro Kit, developers get the structure and tooling of a modern framework while retaining the simplicity and complete control of Express.js.
 
-Solution Flow & Architecture
+## Solution Flow & Architecture
 
 The developer experience is designed to be seamless and intuitive, focusing on productivity from the very first command.
 
@@ -34,8 +34,9 @@ The developer experience is designed to be seamless and intuitive, focusing on p
 
 A developer starts a new project with our CLI:
 
+```
 npx create-express-pro my-awesome-api
-
+```
 
 The CLI will then prompt for key decisions, allowing for a tailored setup:
 
@@ -55,6 +56,21 @@ The result is a fully configured, ready-to-code project with a logical, modular 
 
 Core Boilerplate Architecture:
 
+src/: Main source code directory.
+
+config/: For environment variables and configuration management.
+
+core/: For application-wide logic, like the core server setup, error middleware, and logging.
+
+modules/: The heart of the application, where feature-specific logic resides (e.g., users/, products/). Each module will contain its own controllers, services, routes, and validation schemas.
+
+lib/: Shared utilities and helper functions.
+
+tests/: For all test files, mirroring the src structure.
+
+Root: Dockerfiles, CI/CD configuration (.github/workflows), and other project-level files.
+
+```
 /
 ├── src/
 │   ├── config/
@@ -74,13 +90,15 @@ Core Boilerplate Architecture:
 ├── package.json
 └── tsconfig.json
 
+```
 
 2. Adding Features with Recipes
 
 Once the project is set up, adding complex features is a one-line command. For example, to add JWT authentication:
 
+```
 npx express-pro add auth --strategy=jwt
-
+```
 
 The CLI will perform the following actions:
 
@@ -96,7 +114,7 @@ Provide instructions: It will log a summary of the changes and instruct the deve
 
 The developer now has a fully functional, easily customizable authentication system within their own codebase.
 
-How to Contribute
+## How to Contribute
 
 This is an ambitious project, and we need a vibrant community to make it a reality. Whether you're a seasoned developer or just starting, there are many ways to contribute. We believe in collaboration and open discussion.
 
@@ -118,7 +136,7 @@ Check out the good first issue tag: Once the repository is live, we will mark is
 
 Pick a Recipe: Think of a common feature you've built in Express. Propose a new recipe and help build it!
 
-Project Roadmap
+## Project Roadmap
 
 We will tackle this project in manageable phases:
 
@@ -147,3 +165,4 @@ Expand the recipe collection based on community demand (e.g., OAuth, Stripe inte
 Establish a governance model for the project.
 
 Let's build the tool we've all been waiting for. Let's make building with Express.js productive, scalable, and fun again!
+
